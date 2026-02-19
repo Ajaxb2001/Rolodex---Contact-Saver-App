@@ -235,32 +235,39 @@ const STYLES = `
     .card-heading { font-size: 26px; }
     .card-sub { font-size: 13px; margin-bottom: 28px; }
 
-    /* Mini feature strips below the sign-in card */
+  }
+
+  /* ── Mobile feature strips ── */
+  .mobile-features { display: none; }
+
+  @media (max-width: 768px) {
     .mobile-features {
       display: flex;
       flex-direction: column;
       gap: 10px;
-      margin-top: 20px;
+      margin-top: 16px;
     }
     .mobile-feature {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 12px 14px;
+      border-radius: 14px;
+      padding: 14px 16px;
+      box-shadow: 0 1px 4px rgba(60,45,30,0.06);
     }
     .mobile-feature-icon {
-      width: 28px; height: 28px;
+      width: 36px; height: 36px;
       background: var(--accent-light);
-      border-radius: 7px;
+      border-radius: 10px;
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
     }
     .mobile-feature-icon svg { color: var(--accent); }
-    .mobile-feature-text { font-size: 12.5px; color: var(--ink-2); line-height: 1.4; }
-    .mobile-feature-text strong { display: block; color: var(--ink); font-size: 13px; font-weight: 500; margin-bottom: 1px; }
+    .mobile-feature-text { display: flex; flex-direction: column; gap: 2px; }
+    .mobile-feature-label { font-size: 13.5px; font-weight: 600; color: var(--ink); line-height: 1.2; }
+    .mobile-feature-desc { font-size: 12px; color: var(--ink-3); line-height: 1.4; }
   }
 `
 
@@ -394,25 +401,25 @@ export default function LoginPage() {
             <div className="mobile-features">
               <div className="mobile-feature">
                 <div className="mobile-feature-icon">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
                     <path d="M7 11V7a5 5 0 0 1 10 0v4" />
                   </svg>
                 </div>
                 <div className="mobile-feature-text">
-                  <strong>Private & secure</strong>
-                  Your contacts are yours only
+                  <div className="mobile-feature-label">Private & secure</div>
+                  <div className="mobile-feature-desc">Your contacts are yours only</div>
                 </div>
               </div>
               <div className="mobile-feature">
                 <div className="mobile-feature-icon">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" />
                   </svg>
                 </div>
                 <div className="mobile-feature-text">
-                  <strong>Instant search</strong>
-                  Find anyone in milliseconds
+                  <div className="mobile-feature-label">Instant search</div>
+                  <div className="mobile-feature-desc">Find anyone in milliseconds</div>
                 </div>
               </div>
             </div>
